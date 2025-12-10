@@ -1,11 +1,6 @@
-import { useEffect, useState } from 'react';
 import {
-  NavLink,
   Route,
-  Routes,
-  useLocation,
-  useNavigate,
-  useParams,
+  Routes
 } from 'react-router-dom';
 
 import Sidebar from "./components/Sidebar.jsx";
