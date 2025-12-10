@@ -19,14 +19,14 @@ https://www.fachinformatiker.de/files/file/36-fachinformatiker-ap1-lernzettel-ab
 
 ## Development
 
-- Abhängigkeiten installieren (falls nötig): `npm install`
-- Entwicklung starten: `npm run dev`
-- Seitenaufruf: `http://localhost:5173/page/1` (oder jede andere Seite 1–125)
+- **Abhängigkeiten installieren:** `npm install`
+- **Server starten:** `npm run dev` oder `npm run preview`
+- **Seitenaufruf:** `http://localhost:5173/page/1` (oder jede andere Seite 1–125)
 
 ## Assets
 
-- Original-HTML-Seiten: `public/pages/html/AP1_Lernzettel-[n].html`
-- Hintergrundbilder: `public/pages/png/AP1_Lernzettel[n].png`
+- **Originale HTML-Seiten:** `public/pages/html/AP1_Lernzettel-[1-125].html`
+- **Hintergrundbilder:** `public/pages/png/AP1_Lernzettel-[1-125].png`
 
 ## Features
 

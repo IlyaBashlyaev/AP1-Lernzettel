@@ -9,7 +9,7 @@
 .sidebar {
   background: var(--surface);
   border-right: 1px solid var(--border);
-  padding: 28px 20px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -84,16 +84,20 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
   gap: 6px;
-  max-height: calc(100vh - 240px);
+  max-height: calc(100vh - 200px);
   overflow: auto;
   padding-right: 6px;
 }
 
 .content {
-  padding: 32px 40px;
+  padding: 40px;
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
+
+.content:has(.page-view) {
+  padding: 0 40px;
 }
 
 .topbar {
@@ -125,11 +129,22 @@
   min-height: calc(100vh - 160px);
 }
 
+.content__body:has(.start-page) {
+  display: flex;
+}
+
 .start-page {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 24px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   align-items: center;
+  /*grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));*/
+  gap: 24px;
+}
+
+.start-page > div {
+  width: 620px;
 }
 
 .start-copy h1 {
@@ -211,6 +226,20 @@
   flex-wrap: wrap;
 }
 
+.page-title {
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  font-size: 24px;
+}
+
+.page-title > a.scale-control {
+    font-size: 16px;
+    width: 36px;
+    height: 36px;
+    text-decoration: none;
+}
+
 .toolbar-actions {
   display: flex;
   gap: 12px;
@@ -241,14 +270,13 @@
 }
 
 .page-frame {
-  width: 920px;
-  height: 1300px;
+  width: 895px;
+  height: 1266px;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   overflow: hidden;
-  background: var(--surface);
   border: 1px solid var(--border);
 }
 
@@ -268,6 +296,7 @@
 }
 
 .scale-control {
+  height: 40px;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -304,9 +333,11 @@ button:hover {
 }
 
 button.ghost {
+  height: 40px;
+  padding: 0 12px;
   background: transparent;
   border-color: transparent;
-  font-size: 18px;
+  font-size: 24px;
   box-shadow: none;
 }
 
@@ -328,6 +359,12 @@ button.ghost {
   }
 
   .page-frame {
+    width: 100%;
+  }
+}
+
+@media (max-width: 700px) {
+  .start-page > div {
     width: 100%;
   }
 }

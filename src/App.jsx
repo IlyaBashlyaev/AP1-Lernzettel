@@ -12,10 +12,25 @@ import './App.css';
 const TOTAL_PAGES = 125;
 const pageNumbers = Array.from({ length: TOTAL_PAGES }, (_, index) => index + 1);
 
-const htmlPath = (pageNumber) => `/pages/html/AP1_Lernzettel-${pageNumber}.html`;
+const htmlPath = (pageNumber) => `/pages/html/AP1_Lernzettel_${pageNumber}.html`;
 
 const StartPage = () => (
   <div className="start-page">
+    <div className="start-copy">
+      <p className="eyebrow">AP1 IT-Berufe</p>
+      <h1>AP1 IT-Berufe Lernzettel</h1>
+      <p className="lead">
+        Der Inhalt wurde aus dem PDF-Dokument in Fachinformatiker.de erstellt. Alle 125 Seiten sind als eigene Ansicht verfügbar und ihre Inhalte bleiben unverändert.
+      </p>
+      <a
+        className="link-chip"
+        href="https://www.fachinformatiker.de/files/file/36-fachinformatiker-ap1-lernzettel-ab-2025/"
+        target="_blank"
+        rel="noreferrer"
+      >
+        https://www.fachinformatiker.de/files/file/36-fachinformatiker-ap1-lernzettel-ab-2025/
+      </a>
+    </div>
     <div className="start-card">
       <div className="start-card__content">
         <h2>Alle Seiten im Überblick</h2>
@@ -30,27 +45,11 @@ const StartPage = () => (
             <span className="stat__value">IT &amp; Technik</span>
           </div>
           <div className="stat">
-            <span className="stat__label">Layout</span>
+            <span className="stat__label">Inhalt</span>
             <span className="stat__value">Original</span>
           </div>
         </div>
       </div>
-    </div>
-    <div className="start-copy">
-      <p className="eyebrow">AP1 IT-Berufe</p>
-      <h1>AP1 IT-Berufe Lernzettel</h1>
-      <p className="lead">
-        Erstellt aus dem PDF-Dokument in Fachinformatiker.de. Alle 125 Seiten sind als eigene
-        Ansicht verfügbar, die Inhalte bleiben unverändert.
-      </p>
-      <a
-        className="link-chip"
-        href="https://www.fachinformatiker.de/files/file/36-fachinformatiker-ap1-lernzettel-ab-2025/"
-        target="_blank"
-        rel="noreferrer"
-      >
-        https://www.fachinformatiker.de/files/file/36-fachinformatiker-ap1-lernzettel-ab-2025/
-      </a>
     </div>
   </div>
 );
@@ -58,9 +57,7 @@ const StartPage = () => (
 const ScaleControl = ({ scale, onChange }) => (
   <div className="scale-control">
     <span>Zoom</span>
-    <button type="button" onClick={() => onChange(scale - 0.1)}>
-      −
-    </button>
+    <button type="button" onClick={() => onChange(scale - 0.1)}>−</button>
     <input
       type="range"
       min="0.5"
@@ -69,9 +66,7 @@ const ScaleControl = ({ scale, onChange }) => (
       value={scale}
       onChange={(event) => onChange(Number(event.target.value))}
     />
-    <button type="button" onClick={() => onChange(scale + 0.1)}>
-      +
-    </button>
+    <button type="button" onClick={() => onChange(scale + 0.1)}>+</button>
     <span className="scale-value">{Math.round(scale * 100)}%</span>
   </div>
 );
@@ -80,7 +75,12 @@ const PageView = ({ scale, onScaleChange }) => {
   const { pageNumber } = useParams();
   const navigate = useNavigate();
   const pageNum = Number(pageNumber);
+  const [theme, setTheme] = useState('light');
   const [error, setError] = useState('');
+
+    useEffect(() => {
+        document.body.setAttribute('data-theme', theme);
+    }, [theme]);
 
   useEffect(() => {
     if (Number.isNaN(pageNum) || pageNum < 1 || pageNum > TOTAL_PAGES) {
@@ -93,11 +93,29 @@ const PageView = ({ scale, onScaleChange }) => {
   return (
     <div className="page-view">
       <div className="page-toolbar">
-        <div>
+        <div className="page-title">
+          <NavLink
+            to={`/page/${pageNum - 1}`}
+            className="scale-control"
+          >
+            ←
+          </NavLink>
           <strong>Seite {pageNum}</strong>
+          <NavLink
+            to={`/page/${pageNum + 1}`}
+            className="scale-control"
+          >→</NavLink>
         </div>
         <div className="toolbar-actions">
           <ScaleControl scale={scale} onChange={onScaleChange} />
+          <button
+            type="button"
+            className="ghost"
+            aria-label="Theme umschalten"
+            onClick={() => setTheme((prev) => (prev === 'light' ? 'dark' : 'light'))}
+          >
+            {theme === 'light' ? '☀️' : '🌙'}
+          </button>
         </div>
       </div>
 
@@ -158,12 +176,7 @@ const Sidebar = () => {
 };
 
 const AppShell = () => {
-  const [theme, setTheme] = useState('light');
   const [scale, setScale] = useState(1);
-
-  useEffect(() => {
-    document.body.setAttribute('data-theme', theme);
-  }, [theme]);
 
   const handleScaleChange = (nextScale) => {
     const clamped = Math.min(2, Math.max(0.5, nextScale));
@@ -174,20 +187,6 @@ const AppShell = () => {
     <div className="app-shell">
       <Sidebar />
       <div className="content">
-        <header className="topbar">
-          <div>
-            <p className="eyebrow">AP1 IT-Berufe Lernzettel</p>
-            <h2>Originale Inhalte, moderne Navigation</h2>
-          </div>
-          <button
-            type="button"
-            className="ghost"
-            aria-label="Theme umschalten"
-            onClick={() => setTheme((prev) => (prev === 'light' ? 'dark' : 'light'))}
-          >
-            {theme === 'light' ? '🌙' : '☀️'}
-          </button>
-        </header>
         <main className="content__body">
           <Routes>
             <Route path="/" element={<StartPage />} />
