@@ -134,6 +134,7 @@
 }
 
 .start-page {
+  position: relative;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -145,6 +146,12 @@
 
 .start-page > div {
   width: 620px;
+}
+
+.start-page > .ghost {
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 
 .start-copy h1 {
@@ -360,6 +367,10 @@ button.ghost {
 
   .page-frame {
     width: 100%;
+  }
+
+  .page-canvas {
+    width: calc(100% - 2px);
   }
 }
 

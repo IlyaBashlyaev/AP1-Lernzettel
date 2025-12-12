@@ -1,6 +1,9 @@
+import ToggleTheme from "./ToggleTheme.jsx";
+
 export default function StartPage() {
     return (
         <div className="start-page">
+            <ToggleTheme/>
             <div className="start-copy">
                 <p className="eyebrow">AP1 IT-Berufe</p>
                 <h1>AP1 IT-Berufe Lernzettel</h1>

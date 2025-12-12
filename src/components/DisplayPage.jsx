@@ -1,24 +1,19 @@
 import {NavLink, useNavigate, useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
 import ScaleControl from "./ScaleControl.jsx";
+import ToggleTheme from "./ToggleTheme.jsx";
 
 export default function DisplayPage() {
     const { pageNumber } = useParams();
     const navigate = useNavigate();
     const pageNum = Number(pageNumber);
     const [scale, setScale] = useState(1);
-    const [theme, setTheme] = useState(localStorage.getItem('theme'));
     const [error, setError] = useState('');
 
     const handleScaleChange = (nextScale) => {
         const clamped = Math.min(2, Math.max(0.5, nextScale));
         setScale(Number(clamped.toFixed(2)));
     };
-
-    useEffect(() => {
-        localStorage.setItem('theme', theme);
-        document.body.setAttribute('data-theme', theme);
-    }, [theme]);
 
     useEffect(() => {
         if (Number.isNaN(pageNum) || pageNum < 1 || pageNum > 125) {
@@ -48,14 +43,7 @@ export default function DisplayPage() {
                 </div>
                 <div className="toolbar-actions">
                     <ScaleControl scale={scale} onChange={handleScaleChange} />
-                    <button
-                        type="button"
-                        className="ghost"
-                        aria-label="Theme umschalten"
-                        onClick={() => setTheme((prev) => (prev === 'light' ? 'dark' : 'light'))}
-                    >
-                        {theme === 'light' ? '☀️' : '🌙'}
-                    </button>
+                    <ToggleTheme/>
                 </div>
             </div>
 
