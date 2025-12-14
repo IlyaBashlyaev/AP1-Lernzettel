@@ -23,6 +23,16 @@ export default function DisplayPage() {
         setError('');
     }, [pageNum, navigate]);
 
+    /* window.onload = () => {
+        const iframe = document.querySelector('iframe.page-iframe');
+        iframe.style.width  = window.innerWidth + 'px';
+    };
+
+    window.onresize = () => {
+        const iframe = document.querySelector('iframe.page-iframe');
+        iframe.style.width  = window.innerWidth + 'px';
+    }; */
+
     return (
         <div className="page-view">
             <div className="page-toolbar">
@@ -51,7 +61,7 @@ export default function DisplayPage() {
                 {error && <div className="page-status error">{error}</div>}
                 {!error && (
                     <div className="page-frame">
-                        <div className="page-canvas" style={{ transform: `scale(${scale})` }}>
+                        <div className="page-canvas" style={{transform: `scale(${scale})`}}>
                             <iframe
                                 title={`Seite ${pageNum}`}
                                 src={`/pages/html/AP1_Lernzettel_${pageNum}.html`}
