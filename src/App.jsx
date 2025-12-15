@@ -20,7 +20,7 @@ export default function App() {
     document.body.setAttribute('data-theme', theme);
 
     return (
-        <div className="app-shell">
+        <div className="app">
             <Sidebar />
             <div className="content">
                 <main className="content__body">

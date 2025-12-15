@@ -1,4 +1,4 @@
-.app-shell {
+.app {
     display: grid;
     grid-template-columns: 280px 1fr;
     min-height: 100vh;
@@ -352,20 +352,30 @@ button.ghost {
     box-shadow: none;
 }
 
-@media (max-width: 1332px) {
+@media (max-width: 1300px) {
     .content {
+        position: absolute;
+        right: 0;
         padding: 0 !important;
+        border-radius: 0;
+    }
+
+    .content__body {
         border-radius: 0;
     }
 }
 
 @media (max-width: 1200px) {
-    .app-shell {
+    .app {
         grid-template-columns: 1fr;
     }
 
     .nav-list {
         height: 100px;
+    }
+
+    .content {
+        position: static;
     }
 
     .content__body {
@@ -384,12 +394,14 @@ button.ghost {
         padding: 0;
     }
 
-    .page-frame {
-        width: 100vw;
-    }
-
     .page-canvas {
         width: calc(100vw - 2px);
+    }
+}
+
+@media (max-width: 992px) {
+    .page-frame {
+        width: 100vw;
     }
 }
 
