@@ -1,12 +1,12 @@
 {
   "name": "ap1-lernzettel",
-  "homepage": "http://ilyabashlyaev.github.io/AP1-Lernzettel/",
+  "homepage": "https://ilyabashlyaev.github.io/AP1-Lernzettel/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "predeploy":"npm run build",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
     "build": "vite build",
     "lint": "eslint .",
