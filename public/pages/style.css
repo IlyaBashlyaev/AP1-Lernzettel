@@ -10,7 +10,7 @@
 }
 
 body {
-    background-color: #fff;
+    background: linear-gradient(135deg, var(--bg) 0%, var(--bg-strong) 100%);
 }
 
 img {

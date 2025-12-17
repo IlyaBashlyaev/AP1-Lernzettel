@@ -2,18 +2,21 @@
     display: grid;
     grid-template-columns: 280px 1fr;
     min-height: 100vh;
-    background: linear-gradient(135deg, var(--bg) 0%, var(--bg-strong) 100%);
     color: var(--text);
 }
 
 .sidebar {
     background: var(--surface);
     border-right: 1px solid var(--border);
-    padding: 20px;
+    padding: 20px 0;
     display: flex;
     flex-direction: column;
     gap: 20px;
     box-shadow: 4px 0 24px rgba(27, 51, 95, 0.05);
+}
+
+.sidebar > *:not(:has(.nav-list.topics-view)) {
+    margin: 0 20px;
 }
 
 .sidebar__brand {
@@ -72,6 +75,28 @@
     gap: 8px;
 }
 
+.sidebar__section:not(:has(.nav-list.topics-view)) > .section-header {
+    margin: 0;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 20px;
+    gap: 10px;
+}
+
+.section-select {
+    height: 30px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    border-radius: 8px;
+    padding: 0 8px;
+    color: var(--text);
+    font-weight: 600;
+}
+
 .section-title {
     margin: 0;
     text-transform: uppercase;
@@ -87,6 +112,41 @@
     max-height: calc(100vh - 200px);
     overflow: auto;
     padding-right: 6px;
+}
+
+.nav-list.topics-view {
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+.topic-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 10px 12px;
+    font-size: 14px;
+}
+
+.topic-link.subtopic {
+    padding-left: 24px;
+}
+
+.topic-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.topic-number {
+    font-weight: 700;
+    color: var(--accent);
+}
+
+.topic-page {
+    color: var(--muted);
+    font-weight: 600;
 }
 
 .content {
@@ -148,7 +208,7 @@
     width: 620px;
 }
 
-.start-page > .ghost {
+.start-page > button.ghost {
     position: absolute;
     top: 0;
     right: 0;
@@ -373,7 +433,7 @@ button.ghost {
 
 @media (max-width: 1300px) {
     .content {
-        position: absolute;
+        position: sticky;
         right: 0;
         padding: 0 !important;
         border-radius: 0;
@@ -389,8 +449,16 @@ button.ghost {
         grid-template-columns: 1fr;
     }
 
+    .sidebar {
+        padding: 20px;
+    }
+
     .nav-list {
-        height: 100px;
+        height: 200px;
+    }
+
+    .topic-link {
+        font-size: 16px;
     }
 
     .content {
@@ -419,6 +487,10 @@ button.ghost {
 }
 
 @media (max-width: 992px) {
+    .page-stage {
+        position: static;
+    }
+
     .page-frame {
         width: 100vw;
     }
@@ -435,9 +507,9 @@ button.ghost {
 }
 
 @media (max-width: 576px) {
-    .toolbar-actions > .ghost {
+    .toolbar-actions > button.ghost {
         position: absolute;
         top: 0;
-        right: 0;
+        right: 12px;
     }
 }
