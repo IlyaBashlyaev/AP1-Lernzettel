@@ -1,6 +1,6 @@
 import {useMemo, useState} from "react";
 import {NavLink, useLocation} from "react-router-dom";
-import tocRaw from "../../Inhaltsverzeichnis/AP1_Lernzettel_Inhaltsverzeichnis.txt?raw";
+import tableOfContents from "../../public/Inhaltsverzeichnis.txt?raw";
 
 const parseTopics = (text) => {
     return text
@@ -9,10 +9,14 @@ const parseTopics = (text) => {
             const trimmed = line.trim();
             if (!trimmed) return null;
 
-            const match = trimmed.match(/^(\d+(?:\.\d+)*)\.?\s+(.+?)\s*\(S\.?\s*(\d+)\)/i);
-            if (!match) return null;
+            const lineData = trimmed.replace('\t', '').split(' - S. ');
+            if (!lineData) return null;
 
-            const [, number, title, page] = match;
+            const [number, title, page] = [
+                lineData[0].split(' ')[0],
+                lineData[0].split(' ').slice(1).join(' '),
+                lineData[1],
+            ];
             const depth = line.startsWith("\t") ? 2 : 1;
 
             return {
@@ -29,7 +33,7 @@ export default function Sidebar() {
     const location = useLocation();
     const [viewMode, setViewMode] = useState("topics");
     const pageNumbers = Array.from({ length: 125 }, (_, index) => index + 1);
-    const topics = useMemo(() => parseTopics(tocRaw), []);
+    const topics = useMemo(() => parseTopics(tableOfContents), []);
 
     const url = new URL(window.location.href);
     const id = url.searchParams.get('id');

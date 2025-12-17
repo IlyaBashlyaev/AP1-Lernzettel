@@ -1,0 +1,132 @@
+1. Grundlagen - S. 6
+	1.1 Künstliche Intelligenz - S. 6
+	1.2 Bits & Bytes - S. 8
+	1.3 Zahlensysteme - S. 8
+
+2. Hardware - S. 12
+	2.1 CPU - S. 12
+	2.2 Speicher (RAM) - S. 15
+	2.3 Datenspeicher - S. 16
+	2.4 Netzwer - S. 17
+	2.5 Grafikkarte - S. 22
+	2.6 Netzwerkprotokolle und OSI-Modell - S. 23
+	2.7 Strukturierte Verkabelung - S. 25
+	2.8 USV (Unterbrechungsfreie Stromversorgung) - S. 26
+	2.9 Energie - S. 27
+	2.10 Geräteklassen - S. 29
+	2.11 Barrierefreiheit - S. 29
+
+3. Software - S. 30
+	3.1 Softwarearten - S. 30
+	3.2 Beurteilungskriterien - S. 31
+	3.3 BIOS - S. 31
+	3.4 Enwicklungssoftware - S. 32
+	3.5 Cloud - S. 33
+	3.6 Virtuelle Desktops - S. 34
+	3.7 Funktionale, ökonomische und ökologische Aspekte - S. 34
+	3.8 Kommunikationssysteme - S. 35
+	3.9 Client-Server - S. 35
+	3.10 Domäne - S. 35
+
+4. Installation und Konfiguration - S. 37
+	4.1 Hardware - S. 37
+	4.2 Betriebssystems - S. 37
+	4.3 Kommandozeile - S. 38
+	4.4 Anpassung von Software - S. 38
+	4.5 Konfiguration, Test, Troubleshooting und Dokumentation von Netzwerkverbindungen - S. 38
+	4.6 Konsolenbefehle - S. 39
+
+5. Lizenzen - S. 41
+	5.1 Grundlagen des Urheberschutzes - S. 41
+	5.2 Lizenzarten - S. 42
+
+6. Wirtschaft - S. 44
+	6.1 Kosten - S. 44
+	6.2 Qualitativer und quantitativer Angebotsvergleich und -bewertung - S. 45
+	6.3 Nutzwertanalyse - S. 45
+	6.4 Wertschöpfung - S. 46
+	6.5 Projekte - S. 46
+	6.6 Markformen - S. 48
+	6.7 Vertriebsformen - S. 49
+	6.8 Zielgruppendefinition und -abgrenzung  - S. 49
+	6.9 Verträge - S. 49
+	6.10 Vertragsbestandteile - S. 51
+	6.11 Vertragsstörungen - S. 51
+	6.12 Zielsetzungen - S. 51
+	6.13 Aufbauorganisation - S. 51
+	6.14 Handlungs- und Entscheidungsspielräume und -vollmachten - S. 53
+
+7. Projektmanagement - S. 54
+	7.1 Merkmale - S. 54
+	7.2 Projektplanung - S. 54
+	7.3 SMART - S. 58
+	7.4 Projektphasen - S. 58
+	7.5 Teambildungs-Phasen - S. 59
+	7.6 Reflektionsmethoden - S. 60
+	7.7 Termine - S. 60
+	7.8 Bedarfsanalyse - S. 61
+	7.9 Lasten- und Pflichtenheft - S. 61
+	7.10 Kundenvorgaben bei der Leistungserbringung - S. 61
+	7.11 Technische Voraussetzungen - S. 63
+	7.12 Einhaltung des Budgets - S. 64
+	7.13 Veränderungsprozesse - S. 65
+	7.14 Leistungsübergabe - S. 67
+	7.15 Leistungserbringung - S. 69
+
+8. Software-Entwicklung - S. 71
+	8.1 Variablen, Datentypen und -strukturen - S. 71
+	8.2 Kontrollstrukturen - S. 72
+	8.3 Prozeduren und Funktionen - S. 73
+	8.4 Objektorientierung - S. 73
+	8.5 Bibliotheken und Frameworks - S. 75
+	8.6 Skriptsprachen - S. 75
+	8.7 Pseudocode - S. 76
+	8.8 UML - S. 78
+	8.9 Tests - S. 84
+	8.10 Bildschirmausgabemasken - S. 85
+	8.11 Relationale Datenbanken - S. 86
+	8.12 ERD Chen-Notation - S. 88
+
+9. Support - S. 91
+	9.1 Kommuniaktion - S. 91
+	9.2 Fehlermanagement - S. 93
+	9.3 Störungsmanagement - S. 93
+	9.4 Ticketsystem - S. 93
+	9.5 Support- und Serviceanfragen - S. 94
+	9.6 Service Level - S. 95
+
+10. Qualitätsmanagement - S. 96
+	10.1 QM-Systeme - S. 96
+	10.2 QS-Normen - S. 96
+	10.3 Zertifizierung - S. 96
+	10.4 Qualitätsplanung und -ziele - S. 96
+	10.5 Qualitätslenkung - S. 97
+	10.6 PDCA - S. 97
+	10.7 Testprotokoll - S. 98
+
+11. IT-Sicherheit und Datenschutz - S. 99
+	11.1 Verfügbarkeit, Vertraulichkeit und Integrität - S. 99
+	11.2 Maßnahmen zur Informationssicherheit - S. 100
+	11.3 IT-Sicherheitsbeauftragter - S. 101
+	11.4 Datenschutzbeauftragter - S. 102
+	11.5 IT-Sicherheitsrichtlinien - S. 103
+	11.6 Personelle Maßnahmen und Entwicklung des Sicherheitsbewusstseins - S. 104
+	11.7 BSI IT-Grundschutz-Kompendium - S. 105
+	11.8 Datenschutzgesetze - S. 106
+	11.9 Personenbezogene Daten - S. 107
+	11.10 Rechte der Betroffenen und Konsequenzen der Einwilligung - S. 108
+	11.11 Anonymisierung - S. 110
+	11.12 Pseudonymisierung - S. 111
+	11.13 Schutzbedarfsanalyse - S. 112
+	11.14 Arbeitsplatzbezogenes Sicherheitskonzept - S. 113
+	11.15 ISMS - S. 114
+	11.16 Security by Design - S. 115
+	11.17 Security by Default - S. 116
+	11.18 Härtung des Betriebssystems - S. 117
+	11.19 Datensicherungsverfahren - S. 118
+	11.20 Verschlüsselungstechniken - S. 120
+	11.21 Hashwerte - S. 121
+	11.22 Zertifikate - S. 122
+	11.23 Digitale Signaturen - S. 123
+	11.24 Authentifizierung - S. 123
+	11.25 Personal Firewall - S. 124
